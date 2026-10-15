@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "hitglow",
+	"version": "${version}",
+	"name": "Hit Glow",
+	"description": "mobs and players glow with a cheap shader glow when they get hit. color, size, strength and range in the settings (key G).",
+	"authors": ["wysss"],
+	"contact": {"sources": "https://github.com/realwysss/Hit-Glow"},
+	"license": "All-Rights-Reserved",
+	"icon": "assets/hitglow/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["dev.htgl.HtGl"],
+		"modmenu": ["dev.htgl.ModmenuIntgr"]
+	},
+	"mixins": [
+		{
+			"config": "hitglow.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"suggests": {
+		"modmenu": "*"
+	},
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"fabric-api": "*",
+		"minecraft": ">=1.21.11 <1.22",
+		"java": ">=21"
+	}
+}
