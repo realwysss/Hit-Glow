@@ -6,17 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import net.fabricmc.loader.api.FabricLoader;
 
-public class Cfg {
-	public boolean on = true;
-	public int col = 0xff3a3a;
-	public int rad = 100;
-	public int str = 100;
-	public int fal = 100;
-	public int anim = 0;
-	public int spd = 100;
-	public int blend = 0;
-	public int rng = 48;
-	public int max = 64;
+public class Cfg extends Lay {
 	public boolean pl = true;
 	public boolean mb = true;
 	public boolean sf = false;
@@ -25,6 +15,10 @@ public class Cfg {
 	static final Gson G = new GsonBuilder().setPrettyPrinting().create();
 	static final Path P = FabricLoader.getInstance().getConfigDir().resolve("hitglow.json");
 	public static Cfg c = new Cfg();
+
+	public Lay[] layers() {
+		return new Lay[]{this};
+	}
 
 	public Cfg copy() {
 		return G.fromJson(G.toJson(this), Cfg.class);
@@ -43,15 +37,7 @@ public class Cfg {
 	}
 
 	public static void fx() {
-		c.col &= 0xffffff;
-		c.rad = Math.max(10, Math.min(500, c.rad));
-		c.str = Math.max(0, Math.min(500, c.str));
-		c.fal = Math.max(25, Math.min(300, c.fal));
-		c.anim = Math.max(0, Math.min(4, c.anim));
-		c.spd = Math.max(10, Math.min(500, c.spd));
-		c.blend = Math.max(0, Math.min(1, c.blend));
-		c.rng = Math.max(8, Math.min(128, c.rng));
-		c.max = Math.max(1, Math.min(Gk.MAX, c.max));
+		c.clamp();
 	}
 
 	public static void sv() {

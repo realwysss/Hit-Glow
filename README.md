@@ -4,7 +4,7 @@
 
 mobs and players glow with a cheap shader glow for a moment when they get hit. the glow fades out with the hit.
 
-client side fabric mod for 1.21.11, 26.1 and 26.2. press **G** to open the settings (rebind it in Controls), or use Mod Menu. the settings menu is built into the mod, it only needs fabric api. color picker with hex field, a live preview, sliders and switches.
+client side fabric mod for 1.21.11, 26.1 and 26.2. press **G** to open the settings (press it again to close, rebind it in Controls), or use Mod Menu. the settings menu is built into the mod, it only needs fabric api. color picker with hex field, a live preview, sliders and switches.
 
 - **show on**: players, mobs and yourself, each on or off
 - **color**: any color
@@ -19,9 +19,9 @@ client side fabric mod for 1.21.11, 26.1 and 26.2. press **G** to open the setti
 
 | jar | minecraft |
 |---|---|
-| `hit-glow-mc1.21.11-1.0.0.jar` | 1.21.11 |
-| `hit-glow-mc26.1-1.0.0.jar` | 26.1 |
-| `hit-glow-mc26.2-1.0.0.jar` | 26.2 |
+| `hit-glow-mc1.21.11-1.1.0.jar` | 1.21.11 |
+| `hit-glow-mc26.1-1.1.0.jar` | 26.1 |
+| `hit-glow-mc26.2-1.1.0.jar` | 26.2 |
 
 on the releases page. fabric loader 0.16 or newer, fabric api.
 
