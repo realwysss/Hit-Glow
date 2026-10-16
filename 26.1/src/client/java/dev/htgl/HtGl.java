@@ -14,7 +14,9 @@ public class HtGl implements ClientModInitializer {
 		Cfg.ld();
 		KeyMapping k = key = KeyMappingHelper.registerKeyMapping(new KeyMapping("key.hitglow.open", InputConstants.KEY_G, KeyMapping.Category.register(Identifier.fromNamespaceAndPath("hitglow", "main"))));
 		ClientTickEvents.END_CLIENT_TICK.register(m -> {
-			while (k.consumeClick()) if (m.screen == null) m.setScreen(new dev.htgl.ui.Panel(null));
+			while (k.consumeClick()) if (m.screen == null) {
+				if (net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wysslib")) m.setScreen(new dev.htgl.ui.Panel(null));
+			}
 		});
 	}
 }
